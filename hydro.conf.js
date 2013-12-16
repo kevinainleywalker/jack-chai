@@ -31,12 +31,13 @@ var testObject = {
 module.exports = function(hydro) {
   chai.use(require('./'));
 
-  function throws(title, fn) {
+  function throws(title, fn, msg) {
     hydro.addTest(title + ' (throws)', function() {
       var err = null;
       try { fn() }
       catch(e) { err = e; }
       assert(err, 'Expected `fn` to throw \n\n' + fn + '\n');
+      assert(err.message === msg, err.message);
     });
   }
 
