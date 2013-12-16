@@ -28,4 +28,30 @@ module.exports = function(chai) {
       'expected ' + this._obj + ' to have not been called'
     );
   });
+
+  Assertion.addMethod('min', function(min) {
+    var double = this._obj;
+    new Assertion(this._obj).to.be.testDouble();
+    var len = double.calls.length;
+
+    this.assert(
+      len >= min,
+      'expected ' + this._obj + ' to have been called at least #{exp} times but got ' + len,
+      'expected ' + this._obj + ' to have not been called #{exp} times but got ' + len,
+      min
+    );
+  });
+
+  Assertion.addMethod('max', function(min) {
+    var double = this._obj;
+    new Assertion(this._obj).to.be.testDouble();
+    var len = double.calls.length;
+
+    this.assert(
+      len <= min,
+      'expected ' + this._obj + ' to have been called at most #{exp} times but got ' + len,
+      'expected ' + this._obj + ' to have not been called #{exp} times but got ' + len,
+      min
+    );
+  });
 };
