@@ -106,7 +106,24 @@ module.exports = function(chai, _) {
    this.assert(
       ok,
       'expected ' + this._obj + ' to have been called on ' + _.inspect(ctx),
-      'expected ' + this._obj + ' to have not been called twice, got ' + _.inspect(ctx)
+      'expected ' + this._obj + ' to have not been called on ' + _.inspect(ctx)
+    );
+  });
+
+  Assertion.addMethod('args', function() {
+    var double = this._obj;
+    new Assertion(this._obj).to.be.testDouble();
+    var ok = false;
+    var args = [].slice.call(arguments);
+
+    for (var i = 0, len = double.calls.length; i < len; i++) {
+      if (eql(double.calls[i].args, args)) ok = true;
+    }
+
+   this.assert(
+      ok,
+      'expected ' + this._obj + ' to have been called with ' + _.inspect(args),
+      'expected ' + this._obj + ' to have not been called with ' + _.inspect(args)
     );
   });
 
