@@ -80,6 +80,18 @@ module.exports = function(chai) {
     );
   });
 
+  Assertion.addMethod('twice', function() {
+    var double = this._obj;
+    new Assertion(this._obj).to.be.testDouble();
+    var len = double.calls.length;
+
+    this.assert(
+      len === 2,
+      'expected ' + this._obj + ' to have been called twice, got ' + len,
+      'expected ' + this._obj + ' to have not been called twice, got ' + len
+    );
+  });
+
   Assertion.addProperty('called', function() {
     return this;
   });
