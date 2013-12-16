@@ -5,7 +5,9 @@
  * @api public
  */
 
-module.exports = function(chai) {
+var eql = require('deep-eql');
+
+module.exports = function(chai, _) {
   var Assertion = chai.Assertion;
 
   Assertion.addMethod('testDouble', function() {
@@ -89,6 +91,22 @@ module.exports = function(chai) {
       len === 2,
       'expected ' + this._obj + ' to have been called twice, got ' + len,
       'expected ' + this._obj + ' to have not been called twice, got ' + len
+    );
+  });
+
+  Assertion.addMethod('on', function(ctx) {
+    var double = this._obj;
+    new Assertion(this._obj).to.be.testDouble();
+    var ok = false;
+
+    for (var i = 0, len = double.calls.length; i < len; i++) {
+      if (eql(double.calls[i].context, ctx)) ok = true;
+    }
+
+   this.assert(
+      ok,
+      'expected ' + this._obj + ' to have been called on ' + _.inspect(ctx),
+      'expected ' + this._obj + ' to have not been called twice, got ' + _.inspect(ctx)
     );
   });
 
