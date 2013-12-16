@@ -29,6 +29,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have been invoked',
       'expected ' + this._obj + ' to have not been invoked'
     );
+
+    return this;
   });
 
   Assertion.addMethod('min', function(min) {
@@ -42,6 +44,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have not been called min #{exp} time(s), got ' + len,
       min
     );
+
+    return this;
   });
 
   Assertion.addMethod('max', function(max) {
@@ -55,6 +59,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have not been called max #{exp} time(s), got ' + len,
       max
     );
+
+    return this;
   });
 
   Assertion.addMethod('exactly', function(times) {
@@ -68,6 +74,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have not been called exactly #{exp} time(s), got ' + len,
       times
     );
+
+    return this;
   });
 
   Assertion.addMethod('once', function() {
@@ -80,6 +88,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have been called once, got ' + len,
       'expected ' + this._obj + ' to have not been called once, got ' + len
     );
+
+    return this;
   });
 
   Assertion.addMethod('twice', function() {
@@ -92,6 +102,8 @@ module.exports = function(chai, _) {
       'expected ' + this._obj + ' to have been called twice, got ' + len,
       'expected ' + this._obj + ' to have not been called twice, got ' + len
     );
+
+    return this;
   });
 
   Assertion.addMethod('on', function(ctx) {
@@ -103,11 +115,13 @@ module.exports = function(chai, _) {
       if (eql(double.calls[i].context, ctx)) ok = true;
     }
 
-   this.assert(
+    this.assert(
       ok,
       'expected ' + this._obj + ' to have been called on ' + _.inspect(ctx),
       'expected ' + this._obj + ' to have not been called on ' + _.inspect(ctx)
     );
+
+    return this;
   });
 
   Assertion.addMethod('args', function() {
@@ -120,11 +134,13 @@ module.exports = function(chai, _) {
       if (eql(double.calls[i].args, args)) ok = true;
     }
 
-   this.assert(
+    this.assert(
       ok,
       'expected ' + this._obj + ' to have been called with ' + _.inspect(args),
       'expected ' + this._obj + ' to have not been called with ' + _.inspect(args)
     );
+
+    return this;
   });
 
   Assertion.addProperty('called', function() {
