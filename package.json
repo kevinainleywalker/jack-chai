@@ -1,0 +1,27 @@
+{
+  "name": "jack-chai",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./index.js",
+  "homepage": "https://github.com/jackjs/jack-chai",
+  "scripts": {
+    "test": "hydro",
+    "coverage": "istanbul cover _hydro",
+    "coveralls": "istanbul cover _hydro --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackjs/jack-chai"
+  },
+  "devDependencies": {
+    "hydro": "*",
+    "hydro-dot": "*",
+    "hydro-bdd": "*",
+    "hydro-focus": "*",
+    "coveralls": "~2.3.0",
+    "istanbul": "~0.1.44",
+    "component": "*"
+  },
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "license": "MIT"
+}

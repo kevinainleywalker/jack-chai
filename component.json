@@ -1,0 +1,14 @@
+{
+  "name": "jack-chai",
+  "repo": "jackjs/jack-chai",
+  "description": "",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "component/assert": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
