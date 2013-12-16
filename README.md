@@ -21,8 +21,8 @@ var out = {
 // test double
 
 jack(out, 'test');
-
 ```
+
 #### testDouble
 
 Verify that a function is a test double.
