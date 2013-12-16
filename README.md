@@ -6,7 +6,131 @@
 
 ## Synopsis
 
-## Description
+Chai.js expectations for Jack.js test doubles
+
+## Usage
+
+```js
+// subject:
+
+var out = {
+  test: function() {},
+  other: function() {}
+};
+
+// test double
+
+jack(out, 'test');
+
+```
+#### testDouble
+
+Verify that a function is a test double.
+
+```js
+expect(out.test).to.be.a.testDouble();
+out.test.should.be.a.testDouble();
+
+expect(out.none).to.not.be.a.testDouble();
+out.other.should.not.be.a.testDouble();
+```
+
+#### invoke
+
+Verify that a test double has been invoked.
+
+```js
+expect(out.test).to.have.been.invoked();
+expect(out.test).invoked();
+
+out.test.should.have.been.invoked();
+
+expect(out.other).to.have.not.been.invoked();
+expect(out.other).invoked();
+
+out.other.should.have.not.been.invoked();
+```
+
+#### max
+
+Verify that a test double has been called max `n` times.
+
+```js
+expect(out.test).to.have.been.called.max(1);
+out.test.should.have.been.called.max(1);
+```
+
+#### min
+
+Verify that a test double has been called min `n` times.
+
+```js
+expect(out.test).to.have.been.called.min(42);
+expect(out.test).to.have.been.called.min(42).times;
+
+out.test.should.have.been.called.min(42);
+out.test.should.have.been.called.min(42).times;
+```
+
+#### exactly
+
+Verify that a test double has been called exactly `n` times.
+
+```js
+expect(out.test).to.have.been.called.exactly(42).times;
+expect(out.test).to.have.been.called.exactly(42);
+
+out.test.should.have.been.called.exactly(42);
+out.test.should.have.been.called.exactly(42).times;
+```
+
+#### once
+
+Verify that a test double has been called exactly once.
+
+```js
+expect(out.test).to.have.been.called.once();
+
+out.test.should.have.been.called.once();
+```
+
+#### twice
+
+Verify that a test double has been called exactly twice.
+
+```js
+expect(out.test).to.have.been.called.twice();
+
+out.test.should.have.been.called.twice();
+```
+
+#### on
+
+Verify that a test double has been called on given context.
+
+```js
+expect(out.test).to.have.been.called.on(ctx);
+
+out.test.should.have.been.called.on(ctx);
+
+expect(out.test).to.have.not.been.called.on(ctx);
+
+out.test.should.have.not.been.called.on(ctx);
+```
+
+#### args
+
+Verify that a test double has been called with given arguments.
+
+```js
+expect(out.test).to.have.been.called.with.args('foo', 'bar', 42);
+
+out.test.should.have.been.called.with.args('foo', 'bar', 42);
+
+expect(out.test).to.have.not.been.called.with.args('foo', 'bar', 42);
+
+out.test.should.have.not.been.called.with.args('foo', 'bar', 42);
+```
 
 ## Installation
 
