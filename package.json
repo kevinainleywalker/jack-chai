@@ -16,11 +16,13 @@
   "devDependencies": {
     "hydro": "*",
     "hydro-dot": "*",
-    "hydro-bdd": "*",
+    "hydro-tdd": "*",
     "hydro-focus": "*",
     "coveralls": "~2.3.0",
     "istanbul": "~0.1.44",
-    "component": "*"
+    "component": "*",
+    "chai": "~1.8.1",
+    "jack": "git://github.com/jackjs/jack.git#master"
   },
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT"
