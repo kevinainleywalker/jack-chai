@@ -1,6 +1,6 @@
 {
   "name": "jack-chai",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chai.js assertions for Jack.js test doubles",
   "main": "./index.js",
   "homepage": "https://github.com/jackjs/jack-chai",

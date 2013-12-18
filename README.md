@@ -48,7 +48,7 @@ out.test.should.have.been.invoked();
 expect(out.other).to.have.not.been.invoked();
 expect(out.other).invoked();
 
-out.other.should.have.not.been.invoked();
+out.other.should.not.have.been.invoked();
 ```
 
 #### max
@@ -66,10 +66,10 @@ Verify that a test double has been called min `n` times.
 
 ```js
 expect(out.test).to.have.been.called.min(42);
-expect(out.test).to.have.been.called.min(42).times;
+expect(out.test).to.have.been.called.min(42);
 
 out.test.should.have.been.called.min(42);
-out.test.should.have.been.called.min(42).times;
+out.test.should.have.been.called.min(42);
 ```
 
 #### exactly
@@ -77,11 +77,11 @@ out.test.should.have.been.called.min(42).times;
 Verify that a test double has been called exactly `n` times.
 
 ```js
-expect(out.test).to.have.been.called.exactly(42).times;
+expect(out.test).to.have.been.called.exactly(42);
 expect(out.test).to.have.been.called.exactly(42);
 
 out.test.should.have.been.called.exactly(42);
-out.test.should.have.been.called.exactly(42).times;
+out.test.should.have.been.called.exactly(42);
 ```
 
 #### once
@@ -115,7 +115,7 @@ out.test.should.have.been.called.on(ctx);
 
 expect(out.test).to.have.not.been.called.on(ctx);
 
-out.test.should.have.not.been.called.on(ctx);
+out.test.should.not.have.been.called.on(ctx);
 ```
 
 #### args
@@ -129,7 +129,7 @@ out.test.should.have.been.called.with.args('foo', 'bar', 42);
 
 expect(out.test).to.have.not.been.called.with.args('foo', 'bar', 42);
 
-out.test.should.have.not.been.called.with.args('foo', 'bar', 42);
+out.test.should.not.have.been.called.with.args('foo', 'bar', 42);
 ```
 
 ## Installation
