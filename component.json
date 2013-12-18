@@ -1,7 +1,7 @@
 {
   "name": "jack-chai",
   "repo": "jackjs/jack-chai",
-  "description": "",
+  "description": "Chai.js assertions for Jack.js test doubles",
   "version": "0.0.0",
   "license": "MIT",
   "main": "index.js",

@@ -6,7 +6,7 @@
 
 ## Synopsis
 
-Chai.js expectations for Jack.js test doubles
+Chai.js assertions for Jack.js test doubles
 
 ## Usage
 
