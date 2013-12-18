@@ -26,6 +26,6 @@
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT",
   "dependencies": {
-    "jack-util": "*"
+    "jack-assertions": "*"
   }
 }
