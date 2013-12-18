@@ -37,7 +37,7 @@ module.exports = function(hydro) {
       try { fn() }
       catch(e) { err = e; }
       assert(err, 'Expected `fn` to throw \n\n' + fn + '\n');
-      assert(err.message === msg, err.message);
+      assert(err.message === msg, '\nExpected: ' + msg + '\n Got: ' + err.message);
     });
   }
 
