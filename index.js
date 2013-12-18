@@ -69,13 +69,16 @@ module.exports = function(chai) {
     return this;
   });
 
-  Assertion.addMethod('args', function() {
+  Assertion.addMethod('args', args);
+  Assertion.addMethod('withArgs', args);
+
+  function args() {
     var args = [].slice.call(arguments);
     new Assertion(this._obj).testDouble();
     var ret = util.args(this._obj, args);
     this.assert(ret.expr, ret.msg, ret.negateMsg);
     return this;
-  });
+  }
 
   Assertion.addProperty('called', function() {
     return this;
